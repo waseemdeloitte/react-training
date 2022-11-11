@@ -3,14 +3,14 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 //Components
 import Item from "./Item/Item";
-import Drawer from "@material-ui/core/Drawer";
-import LinearProgress from "@material-ui/core/LinearProgress";
-import Grid from "@material-ui/core/Grid";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
-import Badge from "@material-ui/core/Badge";
+import Drawer from "@mui/material/Drawer"
+import LinearProgress from "@mui/material/LinearProgress";
+import Grid from "@mui/material/Grid";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Badge from "@mui/material/Badge";
 // Styles
 import { Wrapper } from "./App.styles";
-import { CircularProgress } from "@material-ui/core";
+import { CircularProgress } from "@mui/material";
 //Types
 export type CartItemType = {
   id: number;
@@ -43,11 +43,13 @@ const App = () => {
   return (
     <Wrapper>
       <Grid container spacing={3}>
-        {data?.map((item) => (
-          <Grid item key={item.id} xs={12} sm={4}>
-            <Item item={item} handleAddToCart={handleAddToCart} />
-          </Grid>
-        ))}
+        {data?.map((item: CartItemType) => {
+          return (
+            <Grid item key={item.id} xs={12} sm={4}>
+              <Item item={item} handleAddToCart={handleAddToCart} />
+            </Grid>
+          );
+        })}
       </Grid>
     </Wrapper>
   );
