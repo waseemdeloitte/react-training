@@ -1,0 +1,12 @@
+{
+    "links": [
+        {
+            "label": "Dashboard",
+            "href": "/dashboard"
+        },
+        {
+            "label": "Products",
+            "href": "/products"
+        }
+    ]
+}
